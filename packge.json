@@ -1,13 +1,12 @@
 {
-    "name": "sincronizador",
-    "version": "0.18",
-    "description": "Ferramentas uteis para o dia a dia do PDV",
+    "name": "meu-site",
+    "version": "1.0.0",
+    "description": "Meu site em HTML, CSS e JS",
     "main": "server.js",
-    "scripts": {
-      "start": "node server.js"
-    },
     "dependencies": {
-      "express": "^4.17.2"
+      "express": "^4.17.1"
+    },
+    "scripts": {
+      "start": "server.js"
     }
   }
-  
