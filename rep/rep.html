@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reprocessa Movimento</title>
+  <link rel="icon" href="https://filipevieira.com.br/wp-content/uploads/2023/07/Perfil-Pessoal.jpg" type="image/jpg">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="rep.css">
+</head>
+<body>
+
+<div class="container mt-5">
+  <h1 class="mb-1 text-center">Reprocessa Movimento</h1>
+  <form id="requisicaoForm">
+    <div class="form-group">
+      <label for="idAplicativo">ID do Aplicativo:</label>
+      <input type="text" class="form-control" id="idAplicativo" placeholder="ID" required>
+    </div>
+    <div class="form-group">
+      <label for="numeroMovimento">Número do Movimento:</label>
+      <input type="text" class="form-control" id="numeroMovimento" placeholder="Movimento" required>
+    </div>
+    <div class="form-group">
+      <label for="numeroCaixa">Número do Caixa:</label>
+      <input type="text" class="form-control" id="numeroCaixa" placeholder="Caixa" required>
+    </div>
+    <div class="form-group">
+      <label for="numeroCupom">Número do Cupom:</label>
+      <input type="text" class="form-control" id="numeroCupom" placeholder="Cupom (Deixe em branco para null)">
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar Requisição</button>
+    
+
+    <div class="spinner-border text-primary mt-2" style="display: none;" role="status" id="spinner">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <div id="tempoRequisicao" class="mt-2"></div>
+  </form>
+  <div id="retornoJson" class="mt-3"></div>
+</div>
+
+<script src="rep.js"></script>
+
+<footer class="mt-5 text-center">
+  <p>Feito com amor 💚 por <strong>Filipe Santos</strong> e <strong>Chat GPT</strong></p>
+</footer>
+
+<div id="versao" class="fst-italic text-end me-2">Alpha 0.18</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+</body>
+</html>
+

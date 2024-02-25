@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sincronizador</title>
+  <link rel="icon" href="https://filipevieira.com.br/wp-content/uploads/2023/07/Perfil-Pessoal.jpg" type="image/jpg">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="sync.css">
+</head>
+<body>
+
+<div class="container mt-5">
+  <h1 class="mb-1 text-center">Sincronizador</h1>
+  <info class="font-italic small">Ainda em desenvolvimento, apenas para clientes com Omie ID</info>
+  <p class="font-italic small">Depois de informar qual tipo de API, informe o ID do cliente, selecione os tipos de atualizações e depois em Enviar</p>
+
+  <div class="form-group">
+    <label> </label>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="urlChave" id="homologacaoRadio" value="https://appdevi-api.trafficmanager.net">
+      <label class="form-check-label" for="homologacaoRadio">Homologação</label>
+    </div>
+    <div class="form-check form-check-inline">
+      <input class="form-check-input" type="radio" name="urlChave" id="producaoRadio" value="https://appdevi-api.trafficmanager.net" checked>
+      <label class="form-check-label" for="producaoRadio">Produção</label>
+    </div>
+  </div>
+
+  <div class="form-group text-left">
+    <label for="numeroInput">Código de Integração:</label>
+    <input type="number" class="form-control" id="numeroInput" placeholder="Insira o ID">
+  </div>
+
+  <!-- Checkboxes agrupados -->
+  <div class="checkbox-group">
+    <!-- Checkbox 1 -->
+    <div class="form-check text-left">
+      <input type="checkbox" class="form-check-input" id="categoriasCheckbox">
+      <label class="form-check-label" for="categoriasCheckbox">Atualizar Categorias 
+          <i class="fas fa-info-circle" data-toggle="tooltip" title="Sincroniza as categorias de despesas conforme o ERP"></i></label>
+    </div>
+
+    <!-- Checkbox 2 -->
+    <div class="form-check text-left">
+      <input type="checkbox" class="form-check-input" id="contaCorrenteCheckbox">
+      <label class="form-check-label" for="contaCorrenteCheckbox">Atualizar Conta Corrente 
+        <i class="fas fa-info-circle" data-toggle="tooltip" title="Sincroniza das contas correntes conforme o ERP"></i></label>
+    </div>
+
+    <!-- Outros checkboxes -->
+    <div class="form-check text-left">
+      <input type="checkbox" class="form-check-input" id="empresaCheckbox">
+      <label class="form-check-label" for="empresaCheckbox">Atualizar Empresa 
+        <i class="fas fa-info-circle" data-toggle="tooltip" title="Sincroniza dos dados de cadastros da empresa conforme o ERP"></i></label>
+    </div>
+
+    <!-- Outros checkboxes -->
+    <div class="form-check text-left">
+      <input type="checkbox" class="form-check-input" id="locaisEstoqueCheckbox">
+      <label class="form-check-label" for="locaisEstoqueCheckbox">Atualizar Locais de Estoque 
+        <i class="fas fa-info-circle" data-toggle="tooltip" title="Sincroniza dos locais de estoque conforme o ERP"></i></label>
+    </div>
+
+    <!-- Outros checkboxes -->
+    <div class="form-check text-left">
+      <input type="checkbox" class="form-check-input" id="vendedorCheckbox">
+      <label class="form-check-label" for="vendedorCheckbox">Atualizar Vendedor 
+        <i class="fas fa-info-circle" data-toggle="tooltip" title="Sincroniza as informações de vendedores conforme o ERP"></i></label>
+    </div>
+
+    <!-- Outros checkboxes -->
+    <div class="form-check text-left">
+      <input type="checkbox" class="form-check-input" id="usuarioCheckbox">
+      <label class="form-check-label" for="usuarioCheckbox">Atualizar Usuário 
+        <i class="fas fa-info-circle" data-toggle="tooltip" title="Sincroniza novos usuários e senhas caso tenham sido alteradas no ERP"></i></label>
+    </div>
+  </div>
+
+
+  <button type="button" class="btn btn-outline-success" id="enviarBtn" onclick="enviarRequisicao()">Enviar</button>
+
+  <div class="container mt-6">
+    <div id="loading" class="mt-4" style="display: none;">
+      <div class="spinner-border" role="status">
+        <span class="sr-only">Carregando...</span>
+      </div>
+      <p>Aguarde, realizando as atualizações...</p>
+    </div>
+  </div>
+
+  <div id="resultado" class="mt-4"></div>
+</div>
+
+<footer class="mt-5 text-center">
+  <p>Feito com amor 💚 por <strong>Filipe Santos</strong> e <strong>Chat GPT</strong></p>
+</footer>
+
+  <div id="versao" class="fst-italic text-end me-2">Alpha 0.18</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
+<script>
+  $(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();   
+  });
+</script>
+<script src="sync.js"></script>
+
+</body>
+</html>
+
+
