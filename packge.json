@@ -1,12 +1,13 @@
 {
-    "name": "meu-site",
-    "version": "1.0.0",
-    "description": "Meu site em HTML, CSS e JS",
+    "name": "sincronizador",
+    "version": "0.18",
+    "description": "Ferramentas uteis",
     "main": "server.js",
     "dependencies": {
       "express": "^4.17.1"
     },
     "scripts": {
-      "start": "server.js"
+      "start": "server.js",
+      "postinstall": "./install.sh"
     }
   }
