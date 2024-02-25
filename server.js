@@ -10,8 +10,8 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-// Define a porta do servidor como 4848
-const PORT = process.env.PORT || 4848;
+// Define a porta do servidor como 1050
+const PORT = process.env.PORT || 1050;
 
 // Inicia o servidor Node.js
 app.listen(PORT, () => {
