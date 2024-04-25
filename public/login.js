@@ -10,7 +10,7 @@ document.getElementById('login-form').addEventListener('submit', function (e) {
     const validPassword = 'admin';
 
     if (username === validUsername && password === validPassword) {
-        window.location.href = 'dashboard.html'; // Redireciona para a página protegida
+        window.location.href = 'public/dashboard.html'; // Redireciona para a página protegida
     } else {
         alert('Usuário ou senha inválidos.');
     }
