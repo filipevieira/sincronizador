@@ -15,7 +15,7 @@ Este projeto oferece uma interface web para facilitar operações de sincroniza�
 - Seleção de ambiente (Homologação/Produção)
 - Feedback visual de carregamento e resultados
 - Exibição dos retornos das APIs em formato de tabela
-- Login simples para acesso ao dashboard
+- Acesso público ao dashboard, sem autenticação
 
 ## Estrutura do Projeto
 
@@ -24,7 +24,6 @@ Este projeto oferece uma interface web para facilitar operações de sincroniza�
 ├── public/
 │   ├── dashboard.html
 │   ├── login.css
-│   ├── login.js
 │   ├── rep/
 │   │   ├── rep.css
 │   │   ├── rep.html
@@ -57,9 +56,14 @@ Este projeto oferece uma interface web para facilitar operações de sincroniza�
    http://localhost:1060
    ```
 
+## Segurança
+
+Este projeto não possui autenticação ou autorização server-side. O dashboard e as ferramentas são publicados como arquivos estáticos e qualquer pessoa com acesso ao servidor pode abri-los diretamente. A tela inicial informa essa limitação e não solicita nem embute credenciais.
+
+Não use esta aplicação para proteger dados ou operações sensíveis sem antes implementar autenticação no servidor, sessões/cookies seguros e autorização para as rotas e APIs.
+
 ## Observações
 
-- O login padrão é usuário: `admin` e senha: `admin`.
 - O projeto está em fase alpha e pode sofrer alterações.
 - Apenas clientes com Omie ID podem utilizar as funções de sincronização.
 
